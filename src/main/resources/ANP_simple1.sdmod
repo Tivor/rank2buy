@@ -1,0 +1,240 @@
+set top_net [getTopNet $net]
+set SAVED_WITH_VERSION {2.4.0-RC1 made on Tue, 02 Jun 2015 11:57:58 -0400.  VCRevInfo 2773.  Installed on Windows}
+setDefaultCompareMode $net switch_to_direct
+set x 45
+set y 648
+set desc {description}
+set name {Alternatives}
+set color white
+set iconUU {}
+set iconFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set winFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set width 1015
+set height 69
+set clusterName {Alternatives}
+set clusterCompareWord {}
+makeCluster $net $x $y $name $desc
+clusterChangeColor $net $name $color
+setClusterIconUU $net $name $iconUU
+setClusterIconFont $net $name $iconFont
+setClusterTitleFont $net $name $winFont
+setClusterWinSize $net $name $width $height
+setClusterCompareWord $net $name $clusterCompareWord
+deIconizeCluster $net $name
+set name {Prod1}
+set desc {description}
+set x 8
+set y 10
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set name {Prod2}
+set desc {description}
+set x 484
+set y 19
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set name {Prod3}
+set desc {description}
+set x 857
+set y 21
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set x 244
+set y 183
+set desc {description}
+set name {Criteria}
+set color white
+set iconUU {}
+set iconFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set winFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set width 742
+set height 65
+set clusterName {Criteria}
+set clusterCompareWord {}
+makeCluster $net $x $y $name $desc
+clusterChangeColor $net $name $color
+setClusterIconUU $net $name $iconUU
+setClusterIconFont $net $name $iconFont
+setClusterTitleFont $net $name $winFont
+setClusterWinSize $net $name $width $height
+setClusterCompareWord $net $name $clusterCompareWord
+deIconizeCluster $net $name
+set name {Crit1}
+set desc {description}
+set x 234
+set y 14
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set x 34
+set y 413
+set desc {description}
+set name {Features}
+set color white
+set iconUU {}
+set iconFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set winFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set width 1121
+set height 79
+set clusterName {Features}
+set clusterCompareWord {}
+makeCluster $net $x $y $name $desc
+clusterChangeColor $net $name $color
+setClusterIconUU $net $name $iconUU
+setClusterIconFont $net $name $iconFont
+setClusterTitleFont $net $name $winFont
+setClusterWinSize $net $name $width $height
+setClusterCompareWord $net $name $clusterCompareWord
+deIconizeCluster $net $name
+set name {feat1}
+set desc {description}
+set x 89
+set y 34
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set name {feat2}
+set desc {description}
+set x 317
+set y 35
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set x 525
+set y 16
+set desc {description}
+set name {Goal}
+set color white
+set iconUU {}
+set iconFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set winFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set width 213
+set height 48
+set clusterName {Goal}
+set clusterCompareWord {}
+makeCluster $net $x $y $name $desc
+clusterChangeColor $net $name $color
+setClusterIconUU $net $name $iconUU
+setClusterIconFont $net $name $iconFont
+setClusterTitleFont $net $name $winFont
+setClusterWinSize $net $name $width $height
+setClusterCompareWord $net $name $clusterCompareWord
+deIconizeCluster $net $name
+set name {Goal}
+set desc {description}
+set x 95
+set y 15
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set init {Features}
+set final {Alternatives}
+connectClusters $net $init $final
+set init {Goal}
+set final {Criteria}
+connectClusters $net $init $final
+set init {Criteria}
+set final {Features}
+connectClusters $net $init $final
+setNodeCompareWord  $net {Crit1} {Features} {important}
+setNodeCompareWord  $net {feat1} {Alternatives} {important}
+setNodeCompareDirectMult  $net {feat1} {Alternatives} 0.9999994736842106
+setNodeCompareWord  $net {feat2} {Alternatives} {important}
+setNodeCompareDirectMult  $net {feat2} {Alternatives} 1.0000012751677851
+setNetCompareWord $net {important}
+setNetClusterColor $net {white}
+setNetNodeColor $net {white}
+setNetClusterWinFont $net {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+setNetClusterIconFont $net {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+setNetNodeFont $net {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+setFormulaType $net 0
+#Working on net 0
+catch {limitPowerOptions $net 2 0}
+c-network readAllCompares -network $net -source {
+4
+Alternatives
+3
+Prod1
+Prod2
+Prod3
+Criteria
+1
+Crit1
+Features
+2
+feat1
+feat2
+Goal
+1
+Goal
+
+4 0,0 2,1 1,2 3,3 
+ 0.000000  1.000000  0.000000  0.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.000000  0.000000  0.000000 
+0
+0 
+
+1
+1 2,0 
+
+2
+1 0,0 
+
+3
+1 1,0 
+
+1,0,2
+2 0,0 1,1 
+ 0.333333 
+
+2,0,0
+3 0,0 1,1 2,2 
+ 1.599977  1.333325 
+ 0.833340 
+
+2,1,0
+3 0,0 1,1 2,2 
+ 7.812721  15.625071 
+ 1.999953 
+
+3,0,1
+1 0,0 
+
+}
+
+set FORMAT 1
+recreateNetInsideFrameOnly $net
+catch {backupRestoreFromUUencodedString $top_net "h5Siaaaaaaaac;2C;39CrX4FQHi:BdgufKsOsLMvGgJLU9Z8CvwHQznqT5QtXK7cwPPOD3FwVUyE8T3E98aIFa7T2ejrvsf;qs3OsjuqIPqcrrsA;f:JU8V4SNDTN64eJNdT7hzUzR8Z;m849:L;z4AC3xmZPAHDmP47yILQTUP;xfQYRxA23AH52hxpNP1;vVgmctuIGs2zOSisnSWVbDPg9ieScrIjaIvD05XDQIAcPuANhTHwXupU7vzZSrq3g8fTXkwABCZhcXwpc4CQN;w;5IM4VDsOgd;38JMpsjCGleQiLGIDq7XcEyxHmKnAeF7AE:RmQDoZPEmZXWR7XCx0yPBVomMdNJfkU:y89ukZbz1ZD4OEePSpcBm6GMa9fs8kuGHn9wTqw7A2A946PaNPhU4etvbOnFqcp8ZuwFronHVEsB9fVxPyzTiETiAqL8q8oQEzPRgLrt9zyIzBRJDnLNUP3Javl7RwBpBDd;n1TxXJnPK4CUFSLBHKBc43k28C7TGSy3nfHrfzx2i4hlPscVoaCIn0yqvgqGyyI2bAfHjkWNc0shVbXXwpHyXr6NmuyevekjcMaFD0qsZ9qc7Zwfer3TYckiYjo7kj3xmZJUoShxP58Ddk3Qg3JB35UxIXaC:x631922YCGErH;p8gHjUuZH50D:ZyXFptCY0DphF9ZoZ1QrLVMzrzgzxotggV8HVRWslmDEYKH5J4CQErQj68gnzcvRIc6waiLt4V4bsy2xqJASkQsWOz15238nDQ2ItY63enMPFB20m;J0Ni80tIQwz01w:zK8aM7yc90UvQhc6CJjSxtBvLWZGB5bwp9sX22rnmzuLJ37g4NhY3QOVjCMyTEW3:BR4LO8xyTHPGseU327uxnMVnLND6OrRBlkmk;J082LU;pVX7aLtRpv27THrx78zDQLTt8DrlRviJGxKn9JgbJ08V16NC6EOUXuY9aiAgE2nBSnx6HDGtUJFAwQCnu6JzDdzzEu;d66STK17K8L;Yu2LrPThdv8ZdvYgzThm51DAe3XDD9bVZDIRvsLy2Q6tQkE3K20b1PQFroPNQnLzk2BcXwPi6wNgUgTDSRMzpIAmvWwbMQ0FSHMQj1G6NUHQTpkQhDzpjfu;5XIAdHABxkYOrgduHiaAdR30TBfC92tDmJeBnBdM2S;UfHHyLK29E12P7AZOZGmJHuCSywDDSPDmEKSPBl2Psy7Uvt9PZAXt2f3HeqwrBbthfbIRsb2ffDhSB5RkViOipJOQUEiqnBuprCxH0QGukAvx0b6NtjspRkz1xupRgIxXf6:EzZHofB1:NHa5TKH1Cka6vnaAH77hpiWDhrvE9OwKWpbzzNBb;4gK05aeO8RUChLVjOGb151Y;yQV8ZfyrkhYm5fp4lziEoljknlq0wveSbIRIb2ff31EFNoobIUHbvbhBvKwsd2WEeqDrrxXBfwK2ScjYGiag9cgdS7K;23WDfFY97DCE6iIa0ioBxKdqp4bBfXcmtUkRyoa;bWmJYT5cGemZpecXqlvrJxpHAvrT;lxCQsN13BbHF6NAVqBtbG7NeQmTJQI920RiHN2hlw4y7pDAgXNXEk2LEHQAvLATT7SDAC0BRTyxM74yB9txnWOEs9:ut4zQ9EBIUiZsh5ee16rGZBBRNTXD07sOE9WW5LqjXFbw4wDr9OAv4TKqIPVOdymiIRLuMSKTTzcfONC0JhWtFw1qYBgquVfTTuhVFHJ6jVRdaguiuaBVVy4zyHHSj9pykmX4k6YcDGrXEtKB6;I6Qe7FQGE1neQImZNs3La70bPd5TObYA6Rzl1Z34eR70LZz;iNOkHt9;EUlVB5hK35pWs0xAO36PmxER3S1i:dbw;6vQ2x50pnY8z2kVvlpr5JhKOORGtPYYdQTAXVJTzQVvvOE5ocThAP4EY1qVb5eY5aBTqgjLWisTi4mTMdza:i8k:3HeUYlZH8WlC;RuY5ylaP1lmhYr51E8dSavus;6LWCt9bG:dqjplijpBWjphOjpvCd:ui1HTqPtEsn1I6rzLfiSuvc1s3QZHSeBNW5wixW0ctfieusLputAAsLK7IsEksnb:dbf2pLOfZHAbPiCZxPAK5HuigS9;7PXkPTcSIWuEKuKqrOwxsdtsjqkRFjeMLCjLRRzvmzKkth6W3PzkKtQvWGzqSk3a0GKgkLWxHsok1lwHkC6QkKqiXvbyseA3tixkjbgvzzXY5I7vsfktiyfMtqMG92rOuSRqqdWQhUNDbBHkV10Dq4;82XfGs848I2jMtr;C9mcfGvRd23aiiPXVTkScWbAhlQuBTAMRQe38bjqYYv6CWUeGUywGTgnNfjyXu;T6DWGJt7h;t;XzPrINW34yNfYTgPhz5T7lWKGCPUUiHCrcPekZnf48Or5XithGqic3nGldjfL4XSfJWWdFcjYZqOAdCfZabyHuZqIQeSqYurGhkltEmilVwSxzO8zd8Kpof54sDD888Xuo5WiZO4PGrRHaWbfvMLdkUDMPgkPpEjZmAB:fYzJt3;HwBesUYi55JerfgRDsweIQI1fJcLw9rq1OAuMrh4gJM3WHzyeyCkbogiytQKIcUlrEHJRqYMbkwTYm3yKHppT7DDw5DCvA7JZVVvt08yEufzXv:oy0sKTucm91j6Oa4SADBGh8:gJeohOKZEia4yfsXlvWt2HHPLROlbyPGcumRwKzCcu5kqml3cItjLtvDXOPPUqUqPnl8bjlXldmhKRgnSXGKfbwajaHnki2LVQfigMz9zyXVJw;qLreWErfiQiQWLHgliMLcjAu3rLbllyq5GKDHIapKeWkYozdaehOGExlTICE7lZM4jideDD6898oJDXkmxeQIh9kP6hU9pE6Ha4zGIKMKnskOtbggVDMM1nbLRIsGkaMjPezs0yjyrzHcbCdG0X9yHmWHdUrFytYjaZuJ5WbJRMntybaiWKGMVu:agm9AC9ay3YalGCelVyFWdqSLUdmGteeOXWaZ5HSnBveD1glVGrJf2MaDcbZXKeuqjImvgK2Wcl7pbGPdVb8LOXa;0b6pRf18DMpg;DHXFUn1fZ09ZLL0;u:lV13t:4c7B1lgU70;EUedP4NRHzxUiwF20B0p:9E61FJ9324NXK;;EhGLDPzU:;cM90ADzWzxNYGxW2CiCHDVhydUkyYCkyivLPXHWCPcWgqsiLkuKh16sUPbvJnjHyj5g5LIYFYrsx:4WvNVN1c5dn5ym8qP3GK5qGkXtllBaO1qNQgDs7Qv3MApjGD8njdV80eyYU;XqlmI3Dd20K577YkzzjgNfxTdkkkcAywjmUIzCBftqQgz0d5rYNGOZNVACyfCscGmQWjcizeFHDPeoOGSPJzGopaHDOe0fHgi;RQiukqWjMswkHqzHqlyv1vC;dlIsaKsCaG7oufaCBN2tOBqi6rRD3ApRm58F4WdDJA:aLPzFFwJx4yZAVNDTZ66AQx8MhmJ;oXNF4BEoFkVQtToT4t8YmOsgrWxmWrHiQHd81UOcNea8eq26LHVD6GPsfKWQDxMeozLKUXhamkKlgghlJiWCIjbJBS;UEIF;0YJOWQ6j7dgjnKLmL1MehcXSy5QrKgTm;L0aVv5smQbEMWWfykAYQiGGzhqWd5UfatcfaJQPC9P21zcW871UaJtjmlgOMstA6HfeumHqJksKzjcu0G3iYsSvahnltEmiip1NDK8S009XpLBnqKrKOJGG98ncWnVJ4MbvAK0SsOcvQuQodM:e2ZqhvOv2OK13I;RgM9TC2y20NiwwPxaEl0JZ3qiFBTAU:Btx49VCrxVoD34pQW5Q3C:;Kxpv8Z8YIDpqtl;eimhUxLHPFTO5JAoRNsFbSFX;DrTCbXFOPxUu9olCZqxn;82k9;nyERU59o0ERn3v3hOJUljb;fyxM:csOtNwqNYDS0kLfuW;hWgeeeBwyKi09wmIWXWuDXmECrR;1VvXNZ6:Z6wHA2taqhzGiBu9jadS3KRLk0fXakJqO1neWeVJfuvv2Qdh9w;nGjyeaFGzyfhoq9IeIB6Kq2nGv9tW2J20VfNvP0ZpJNr3:Z3D8YLtY:9Dx3uoNKBRsYHU0RvJS1035eDzA:FTNQ:X0o4CGLOazfcYbtjgzWEMmGtB:iN1VC;sga1criebK:jDH5KPnl8fcsmb5X97dKUnGOXIKxrYA1VsraAtN1f9uveekiWQid6cpTewcglmiOjmXk9CsGuutsWOuacaMBFrHe4NhddIjxjQ5ZCEOV;YE4T58EEpXi6V:;ra8d9W1Vo30:60ei4G;MQVNNb7v76DDQ69Cy:P::IRd8YB;Vu::VJLrC6hTWGgf5DioUVdVrTgT2tM07dp89F:r9bWb9RpnyzYxLRmPSgR51Z7x3Y7FemkwFty0VsjMCKHsATODDiYnbNsKwbOmOOOMghrIeOWQBiPe1uAt;IrbRfKgAgYrbfLfPLaHnyOQuXpQo37iIKz0g4NR:2:kpFCn8:VVo;9:Bx4N;374Z90q9XgF5TfTyqE:WpTZ8HmPXcaaa"}
